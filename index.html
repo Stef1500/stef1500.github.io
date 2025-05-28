@@ -2,12 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Assignment 1</title>
+    <title>Assignment 2</title>
 </head>
 <body>
     <h1>Stefano Buglione</h1>
     <h1>COP4813 - Web Applications Programming</h1>
     <h1>Major: Computer Science</h1>
-    <h1>Hello World!</h1>
+    <h1>Welcome to my dynamic webpage!</h1>
+
+    <script>
+        //Get current time
+        const currentHour = new Date().getHours();
+
+            //Change color depending on the time
+            if (currentHour >= 6 && currentHour <= 11)
+                document.body.style.backgroundColor = "#F8B86A"; // Morning
+            else if (currentHour >= 12 && currentHour <= 18)
+                document.body.style.backgroundColor = "#F6F86A"; // Afternoon
+            else if (currentHour >= 18 && currentHour <= 20)
+                document.body.style.backgroundColor = "#6AA6F8"; // Evening
+            else
+                document.body.style.backgroundColor = "#6A70F8"; // Night
+    </script>
 </body>
 </html>
