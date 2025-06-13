@@ -9,20 +9,46 @@
     <h1>COP4813 - Web Applications Programming</h1>
     <h1>Major: Computer Science</h1>
     <h1>Welcome to my dynamic webpage!</h1>
+    <div id="image"></div>
 
     <script>
         //Get current time
         const currentHour = new Date().getHours();
+        const img = document.createElement('img');
 
             //Change color depending on the time
-            if (currentHour >= 6 && currentHour <= 11)
+            if (currentHour >= 6 && currentHour <= 11) {
                 document.body.style.backgroundColor = "#F8B86A"; // Morning
-            else if (currentHour >= 12 && currentHour <= 18)
+
+                img.src = "https://images.unsplash.com/photo-1500534623283-312aade485b7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+                img.width = 400;
+                const container = document.getElementById('image');
+                container.appendChild(img);
+            }
+            else if (currentHour >= 12 && currentHour <= 18) {
                 document.body.style.backgroundColor = "#F6F86A"; // Afternoon
-            else if (currentHour >= 18 && currentHour <= 20)
+
+                img.src = "https://plus.unsplash.com/premium_photo-1678559034015-a487448e473b?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+                img.width = 400;
+                const container = document.getElementById('image');
+                container.appendChild(img);
+            }
+            else if (currentHour >= 18 && currentHour <= 20) {
                 document.body.style.backgroundColor = "#6AA6F8"; // Evening
-            else
+
+                img.src = "https://images.unsplash.com/photo-1561915573-b78892da34b9?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+                img.width = 400;
+                const container = document.getElementById('image');
+                container.appendChild(img);
+            }
+            else {
                 document.body.style.backgroundColor = "#6A70F8"; // Night
+
+                img.src = "https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=2094&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+                img.width = 400;
+                const container = document.getElementById('image');
+                container.appendChild(img);
+            }
     </script>
 </body>
 </html>
