@@ -1,94 +1,54 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Assignment 4</title>
-    <link rel="stylesheet" href="index.css">
+    <title>Assignment 2</title>
 </head>
 <body>
+    <h1>Stefano Buglione</h1>
+    <h1>COP4813 - Web Applications Programming</h1>
+    <h1>Major: Computer Science</h1>
+    <h1>Welcome to my dynamic webpage!</h1>
+    <div id="image"></div>
+
     <script>
-        function toggleDropdown(id) {
-            let allDropdowns = document.querySelectorAll(".dropdown-content");
+        //Get current time
+        const currentHour = new Date().getHours();
+        const img = document.createElement('img');
 
-            for (let i=0 ; i < allDropdowns.length ; i++)
-                if(allDropdowns[i].id !== id)
-                    allDropdowns[i].style.display = "none";
+            //Change color depending on the time
+            if (currentHour >= 6 && currentHour <= 11) {
+                document.body.style.backgroundColor = "#F8B86A"; // Morning
 
-            let dropdown = document.getElementById(id);
-            if (dropdown.style.display === "grid")
-                dropdown.style.display = "none";
-            else
-                dropdown.style.display = "grid";
+                img.src = "https://images.unsplash.com/photo-1500534623283-312aade485b7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+                img.width = 400;
+                const container = document.getElementById('image');
+                container.appendChild(img);
             }
+            else if (currentHour >= 12 && currentHour <= 18) {
+                document.body.style.backgroundColor = "#F6F86A"; // Afternoon
 
+                img.src = "https://plus.unsplash.com/premium_photo-1678559034015-a487448e473b?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+                img.width = 400;
+                const container = document.getElementById('image');
+                container.appendChild(img);
+            }
+            else if (currentHour >= 18 && currentHour <= 20) {
+                document.body.style.backgroundColor = "#6AA6F8"; // Evening
+
+                img.src = "https://images.unsplash.com/photo-1561915573-b78892da34b9?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+                img.width = 400;
+                const container = document.getElementById('image');
+                container.appendChild(img);
+            }
+            else {
+                document.body.style.backgroundColor = "#6A70F8"; // Night
+
+                img.src = "https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=2094&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+                img.width = 400;
+                const container = document.getElementById('image');
+                container.appendChild(img);
+            }
     </script>
-
-    <div class="content_box">
-        <h1>Select a subject</h1>
-        <button onclick="toggleDropdown('dropdown1')">Mathematics</button>
-        <div id="dropdown1" class="dropdown-content">
-                <form action="algebra.html">
-                    <input type="submit" value="Algebra">
-                </form>
-                <form action="trigonometry.html">
-                    <input type="submit" value="Trigonometry">
-                </form>
-                <form action="precalculus.html">
-                    <input type="submit" value="Pre-Calculus">
-                </form>
-                <form action="calculus.html">
-                    <input type="submit" value="Calculus">
-                </form>
-        </div>
-
-        <button onclick="toggleDropdown('dropdown2')">History</button>
-        <div id="dropdown2" class="dropdown-content">
-                <form action="americancivilwar.html">
-                    <input type="submit" value="American Civil War">
-                </form>
-                <form action="worldwar1.html">
-                    <input type="submit" value="World War I">
-                </form>
-                <form action="worldwar2.html">
-                    <input type="submit" value="World War II">
-                </form>
-                <form action="coldwar.html">
-                    <input type="submit" value="Cold War">
-                </form>
-        </div>
-        <button onclick="toggleDropdown('dropdown3')">Programming</button>
-        <div id="dropdown3" class="dropdown-content">
-                <form action="C++.html">
-                    <input type="submit" value="C++">
-                </form>
-                <form action="python.html">
-                    <input type="submit" value="Python">
-                </form>
-                <form action="java.html">
-                    <input type="submit" value="Java">
-                </form>
-                <form action="html.html">
-                    <input type="submit" value="HTML">
-                </form>
-        </div>
-        <button onclick="toggleDropdown('dropdown4')">Sciences</button>
-        <div id="dropdown4" class="dropdown-content">
-                <form action="biology.html">
-                    <input type="submit" value="Biology">
-                </form>
-                <form action="chemistry.html">
-                    <input type="submit" value="Chemistry">
-                </form>
-                <form action="physics.html">
-                    <input type="submit" value="Physics">
-                </form>
-                <form action="astronomy.html">
-                    <input type="submit" value="Astronomy">
-                </form>
-        </div>
-    </div>
-
-
-
 </body>
 </html>
